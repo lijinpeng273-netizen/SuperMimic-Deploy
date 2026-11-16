@@ -1,0 +1,22 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "h1-supermimic-deploy"
+version = "0.1.0"
+description = "Standalone Unitree H1 SuperMimic sim2sim and sim2real tools"
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+dependencies = ["numpy", "scipy", "mujoco~=3.16.0", "onnxruntime", "tyro", "pandas", "tqdm"]
+
+[project.optional-dependencies]
+pt = ["torch>=2.3"]
+export = ["torch>=2.6", "onnx", "onnxscript"]
+
+[project.scripts]
+h1-export = "h1_deploy.deploy.export:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/h1_deploy"]

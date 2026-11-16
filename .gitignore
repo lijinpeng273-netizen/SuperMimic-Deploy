@@ -1,0 +1,15 @@
+.venv/
+__pycache__/
+*.pyc
+*.egg-info/
+build/
+dist/
+/outputs/
+/deploy_logs/
+/data/
+*.npz
+*.onnx
+*.pt
+scripts/deploy/bridge/h1_bridge
+scripts/deploy/bridge/libh1bridge_client.so
+scripts/deploy/bridge/h1_odom_bridge
